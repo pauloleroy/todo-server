@@ -17,6 +17,11 @@ app.use(cors({
 
 app.use(morgan("dev")); // log básico no console
 
+// NOVO CÓDIGO AQUI: Rota de Healthcheck Rápido
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'healthy', database: 'connected' });
+});
+
 // Middleware de body parser (global)
 bodyParserMiddleware(app);
 
