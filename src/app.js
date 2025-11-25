@@ -15,6 +15,9 @@ app.use(cors({
 }));
 
 
+app.options('*', cors());
+
+
 app.use(morgan("dev")); // log básico no console
 
 // NOVO CÓDIGO AQUI: Rota de Healthcheck Rápido
